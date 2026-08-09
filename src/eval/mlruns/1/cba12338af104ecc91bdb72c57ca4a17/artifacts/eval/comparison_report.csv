@@ -1,0 +1,3 @@
+model,hawkes_log_likelihood,hawkes_aic,hawkes_bic,hawkes_flagged_bins,mmpp_log_likelihood,mmpp_aic,mmpp_bic,mmpp_flagged_bins
+hawkes,56.487782989402035,-106.97556597880407,-93.70582508820351,113.0,,,,
+mmpp,,,,,-487.24558869287193,990.4911773857439,1020.1214371829935,50.0

@@ -1,0 +1,9 @@
+{
+  "stream_type": "mmpp",
+  "duration_sec": 300.0,
+  "seed": 11,
+  "mu_normal": 1.0,
+  "mu_attack": 8.0,
+  "p_normal_to_attack": 0.02,
+  "p_attack_to_normal": 0.15
+}

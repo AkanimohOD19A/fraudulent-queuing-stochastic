@@ -1,0 +1,3 @@
+model,precision,recall,f1,detection_latency_sec,log_likelihood,aic,bic,fit_time_sec
+hawkes,0.372,0.913,0.528,1.0,56.49,-106.98,-93.71,0.4743
+mmpp,0.92,1.0,0.958,0.0,-487.25,990.49,1020.12,1.9651

@@ -1,0 +1,15 @@
+simpy>=4.1
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+duckdb>=0.10
+hmmlearn>=0.3
+streamlit>=1.32
+plotly>=5.20
+cohere>=5.0
+langfuse>=2.20
+mlflow>=2.12
+python-dotenv>=1.0
+zenml>=0.96
+sqlalchemy-utils
+sqlmodel

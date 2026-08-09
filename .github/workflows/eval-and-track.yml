@@ -1,0 +1,39 @@
+name: eval-and-track
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # This runs the same ZenML pipeline you run locally: ingest (with
+      # the probe-strike detector) -> train -> evaluate/track -> quality
+      # gate. The gate raising an exception fails this step, which fails
+      # the job -- no separate gate script needed, the pipeline IS the gate.
+      - name: Run orchestrated pipeline (ingest -> train -> evaluate -> gate)
+        run: python src/orchestrate/pipeline.py
+
+      # mlflow.db lands at repo root since the pipeline is invoked from
+      # there -- upload it as a build artifact so the run's params/metrics
+      # are inspectable from the Actions tab without a separate server.
+      - name: Upload MLflow tracking store
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlflow-tracking-store
+          path: mlflow.db
+          retention-days: 30

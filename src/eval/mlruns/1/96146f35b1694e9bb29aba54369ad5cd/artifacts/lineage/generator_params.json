@@ -1,0 +1,10 @@
+{
+  "stream_type": "hawkes",
+  "duration_sec": 300.0,
+  "seed": 11,
+  "mu": 0.5,
+  "alpha": 0.3,
+  "beta": 1.0,
+  "attack_window": "[0.4T, 0.5T]",
+  "attack_alpha_multiplier": 2.5
+}
